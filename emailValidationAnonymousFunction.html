@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script>
+     var validateForm=function (email) {
+     var x = document.forms["myForm"]["email"].value;
+     var atCheck = x.indexOf("@");
+     var dotCheck = x.lastIndexOf(".");
+     if (atCheck<1 || dotCheck<atCheck+2 || dotCheck+2>=x.length) {
+        alert("Please enter a valid e-mail address");
+        return false;
+    }
+}
+ </script>
+</head>
+
+<body>
+     <form name="myForm" action="demo_form.asp" onsubmit="return validateForm();" method="post">
+    Email: <input type="text" name="email">
+   <input type="submit" value="Submit">
+     </form>
+</body>
+
+</html>
